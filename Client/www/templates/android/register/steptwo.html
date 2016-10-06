@@ -1,0 +1,84 @@
+<div class="container">
+<div style="margin: 0 auto; width:200px; height: 100px;"><h1>Logo</h1></div>
+<div id="register-form">
+	<div class="input-field">
+		<input type="text" class="validate" id="register-fname" autocomplete="on" autofocus="on">
+		<label for="register-fname">First name</label>
+	</div>
+	<div class="input-field">
+		<input type="text" id="register-mname" autocomplete="on">
+		<label for="register-mname">Middle name (optionally)</label>
+	</div>
+	<div class="input-field">
+		<input type="text" class="validate" id="register-lname" autocomplete="on">
+		<label for="register-lname">Last name</label>
+	</div>
+	<div class="input-field">
+		<input type="text" id="register-position" class="validate" autocomplete="on">
+		<label for="register-position">Position</label>
+	</div>
+		<div class="file-field input-field">
+      <div class="btn">
+        <span>Photo</span>
+        <input type="file" accept="image/*" id="avatar-input">
+      </div>
+      <div class="file-path-wrapper">
+        <input class="file-path validate" type="text">
+      </div>
+    </div>
+		<input type="hidden" id="photodata">
+	<h6 id="register-result"></h6>
+</div>
+	</div>
+<div class="row" id="bottom-nav">
+	<div class="col s12 card grey lighten-2" id="bottom-nav-row">
+		<a class="waves-effect waves-teal btn-flat left" onclick="openRegisterDialog();">Back <i class="material-icons left">keyboard_arrow_left</i></a>
+		<a class="waves-effect waves-teal btn-flat right" id="register-complete">Submit <i class="material-icons right">done</i></a>
+	</div>
+</div>
+<script type="text/javascript">
+$('#avatar-input').change(function(e){
+  $(this).base64img({
+    url: e.target.files[0],
+    result: '#photodata'
+  });
+});
+$('#register-complete').click(function(){
+  var email = localStorage.getItem("register-email")
+  var password = localStorage.getItem("register-pass")
+  var firstName = $('#register-fname').val();
+  var middleName = $('#register-mname').val();
+  var lastName = $('#register-lname').val();
+  var photo = $('#photodata').val();
+  var position = $('#register-position').val();
+  console.log('sending data...');
+	var data = JSON.stringify({
+    email: email,
+    password: password,
+    firstName: firstName,
+    middleName: middleName,
+    lastName: lastName,
+    position: position,
+    photo: photo
+  });
+	console.log(data);
+  $.ajax({
+  method: "POST",
+  url: "http://127.0.0.1:8888/auth/createAccount",
+  data: {'data': data},
+	dataType: "JSON"
+	})
+  .done(function( ans ) {
+
+		console.log(ans.message);
+    //ans = $.parseJSON(msg);
+    if(ans.message == "Success"){
+      window.localStorage.setItem("islogged", "true");
+      window.localStorage.setItem("uid", ans.user_id);
+      location.href="index-and.html";
+    } else {
+      $('#register-result').html(ans.message);
+    }
+  });
+});
+</script>

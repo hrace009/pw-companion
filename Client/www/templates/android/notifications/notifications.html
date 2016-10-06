@@ -1,0 +1,229 @@
+
+<div class="fixed-action-btn" style="bottom: 24px; right: 24px;">
+  <a class="btn-floating btn-large red modal-trigger" href="#" onClick="toggleNotificationsAdd2();">
+    <i class="large material-icons">add</i>
+  </a>
+</div>
+<div class="row">
+  <div class="col s12 m6">
+    <div class="card blue-grey darken-1 white-text">
+      <div class="card-content">
+        <span class="card-title notification-title">Title</span>
+        <a class="right waves-effect waves-light waves-circle more-menu orange-text text-accent-2" href="#" onclick="openNotificationsEdit(1);">
+          <i class="material-icons">more_vert</i>
+        </a>
+        <p class="subline">via Salesforce</p>
+        <p>Fires when KPI is lower than 50</p>
+        <p class="delivery-method">Delivered by Push and E-Mail</p>
+        <p class="schedule">Mon-Fri 9:00-18:00</p>
+      </div>
+      <div class="card-action notification-buttons orange-text text-accent-2">
+        <a href="#">Delete</a>
+        <div class="switch switch-orange switchnotification right"><label>Off<input type="checkbox"><span class="lever"></span>On</label></div>
+      </div>
+    </div>
+  </div>
+  <div class="col s12 m6">
+    <div class="card blue-grey darken-1 white-text">
+      <div class="card-content">
+        <span class="card-title notification-title">Title</span>
+        <a class="right waves-effect waves-light waves-circle more-menu orange-text text-accent-2" href="#" onclick="openNotificationsEdit(2);">
+          <i class="material-icons">more_vert</i>
+        </a>
+        <p class="subline">via Salesforce</p>
+        <p>Fires when KPI is lower than 50</p>
+        <p class="delivery-method">Delivered by Push and E-Mail</p>
+        <p class="schedule">Mon-Fri 9:00-18:00</p>
+      </div>
+      <div class="card-action notification-buttons orange-text text-accent-2">
+        <a href="#">Delete</a>
+        <div class="switch switch-orange switchnotification right"><label>Off<input type="checkbox"><span class="lever"></span>On</label></div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Modals-->
+<div class="modal-fullscreen" id="test-modal">
+  <div class="fullscreen-toolbar blue">
+    <a href="#" class="left white-text fullscreen-modal-close waves-effect waves-light waves-circle" onclick="toggleNotificationsAdd2();"><i class="material-icons">close</i></a>
+    <h4 class="fullscreen-modal-header white-text">New notification</h4>
+    <a href="#" class="right white-text waves-effect waves-light">save<i class="material-icons right">save</i></a>
+  </div>
+  <div class="container fullscreen-modal-content">
+    <div class="input-field col s12">
+      <select>
+        <option value="" disabled selected>Source</option>
+        <option value="1">Salesforce - KPI 1</option>
+        <option value="2">PayPal - New KPI</option>
+        <option value="3">Salesforce - KPI 2</option>
+      </select>
+    </div>
+    <div class="input-field col s12 inline-field">
+      <select id="condition">
+        <option value="higher">Higher</option>
+        <option value="lower">Lower</option>
+      </select>
+      <span class="inline-field">than</span>
+      <input type="number" class="inline-field" id="eqparam">
+    </div>
+    <p>Notify via:</p>
+    <div class="input field col s12">
+      <p>
+        <input type="checkbox" id="delivery-email" />
+        <label for="delivery-email">E-mail</label>
+      </p>
+      <p>
+        <input type="checkbox" id="delivery-push" />
+        <label for="delivery-push">Push Notifications</label>
+      </p>
+      <p>
+        <input type="checkbox" id="delivery-sms" disabled />
+        <label for="delivery-sms">SMS (In development)</label>
+      </p>
+    </div>
+    <p>Send notifications at:</p>
+    <div class="input field col s12 sched">
+      <div class="row">
+        <div class="col s6 m4">
+          <input type="checkbox" id="delivery-sched-sun" />
+          <label for="delivery-sched-sun">Sun</label>
+        </div>
+        <div class="col s6 m4">
+          <input type="checkbox" id="delivery-sched-mon" />
+          <label for="delivery-sched-mon">Mon</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s6 m4">
+          <input type="checkbox" id="delivery-sched-tue" />
+          <label for="delivery-sched-tue">Tue</label>
+        </div>
+        <div class="col s6 m4">
+          <input type="checkbox" id="delivery-sched-wed" />
+          <label for="delivery-sched-wed">Wed</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s6 m4">
+          <input type="checkbox" id="delivery-sched-thu" />
+          <label for="delivery-sched-thu">Thu</label>
+        </div>
+        <div class="col s6 m4">
+          <input type="checkbox" id="delivery-sched-fri" />
+          <label for="delivery-sched-fri">Fri</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s6 m4">
+          <input type="checkbox" id="delivery-sched-sat" />
+          <label for="delivery-sched-sat">Sat</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s5">
+          <input type="time" id="fromtime">
+        </div>
+        <div class="col s2">
+          <p><i class="material-icons">remove</i></p>
+        </div>
+        <div class="col s5">
+          <input type="time" id="totime">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="modal-add-notification" class="modal modal-fixed-footer">
+
+  <div class="input-field col s12">
+    <select>
+      <option value="" disabled selected>Source</option>
+      <option value="1">Salesforce - KPI 1</option>
+      <option value="2">PayPal - New KPI</option>
+      <option value="3">Salesforce - KPI 2</option>
+    </select>
+  </div>
+  <div class="input-field col s12 inline-field">
+    <select id="condition">
+      <option value="higher">Higher</option>
+      <option value="lower">Lower</option>
+    </select>
+    <span class="inline-field">than</span>
+    <input type="number" class="inline-field" id="eqparam">
+  </div>
+  <p>Notify via:</p>
+  <div class="input field col s12">
+    <p>
+      <input type="checkbox" id="delivery-email" />
+      <label for="delivery-email">E-mail</label>
+    </p>
+    <p>
+      <input type="checkbox" id="delivery-push" />
+      <label for="delivery-push">Push Notifications</label>
+    </p>
+    <p>
+      <input type="checkbox" id="delivery-sms" disabled />
+      <label for="delivery-sms">SMS (In development)</label>
+    </p>
+  </div>
+  <p>Send notifications at:</p>
+  <div class="input field col s12 sched">
+    <div class="row">
+      <div class="col s6 m4">
+        <input type="checkbox" id="delivery-sched-sun" />
+        <label for="delivery-sched-sun">Sun</label>
+      </div>
+      <div class="col s6 m4">
+        <input type="checkbox" id="delivery-sched-mon" />
+        <label for="delivery-sched-mon">Mon</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s6 m4">
+        <input type="checkbox" id="delivery-sched-tue" />
+        <label for="delivery-sched-tue">Tue</label>
+      </div>
+      <div class="col s6 m4">
+        <input type="checkbox" id="delivery-sched-wed" />
+        <label for="delivery-sched-wed">Wed</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s6 m4">
+        <input type="checkbox" id="delivery-sched-thu" />
+        <label for="delivery-sched-thu">Thu</label>
+      </div>
+      <div class="col s6 m4">
+        <input type="checkbox" id="delivery-sched-fri" />
+        <label for="delivery-sched-fri">Fri</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s6 m4">
+        <input type="checkbox" id="delivery-sched-sat" />
+        <label for="delivery-sched-sat">Sat</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s5">
+        <input type="time" id="fromtime">
+      </div>
+      <div class="col s2">
+        <p><i class="material-icons">remove</i></p>
+      </div>
+      <div class="col s5">
+        <input type="time" id="totime">
+      </div>
+    </div>
+  </div>
+
+</div>
+<div class="modal-footer">
+  <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat" id="upsert-btn-ok">OK</a>
+  <a href="#!" class=" modal-action modal-close waves-effect waves-red btn-flat">Cancel</a>
+</div>
+</div>
+<!---------->
+<script type="text/javascript">
+$('select').material_select();
+</script>

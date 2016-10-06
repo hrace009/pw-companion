@@ -1,0 +1,218 @@
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(/pkg/materialize/fonts/MaterialIcons-Regular.eot); /* For IE6-8 */
+  src: local('Material Icons'),
+       local('MaterialIcons-Regular'),
+       url(/pkg/materialize/fonts/MaterialIcons-Regular.woff2) format('woff2'),
+       url(/pkg/materialize/fonts/MaterialIcons-Regular.woff) format('woff'),
+       url(/pkg/materialize/fonts/MaterialIcons-Regular.ttf) format('truetype');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+#sidenav-profile {
+    height: 165px;
+}
+#sidenav-avatar {
+	margin-top:10px;
+	width: 80px;
+	height: 80px;
+}
+.sidenav-username {
+	font-size:16px;
+	line-height: 1.5;
+	margin: 0;
+	padding: 0;
+}
+.sidenav-position {
+	font-size:12px;
+	color:#999999;
+	line-height:1;
+	margin:0;
+	padding:0;
+}
+#login-result{
+	color:teal;
+	font-size: 12px;
+	margin:0;
+	padding:0;
+	margin-bottom:20px;
+	height: 20px;
+}
+#loginbtn {
+	margin-right: 8px; /* as in material guidelines */
+}
+#bottom-nav {
+	position:fixed;
+	bottom:0;
+	width: 100%;
+  height: 55px;
+	margin:0;
+	padding:0;
+	line-height: 55px;
+}
+#bottom-nav-row {
+	margin:0;
+  height: 55px;
+  line-height: 55px !important;
+}
+#bottom-nav-row > a {
+  line-height: 55px;
+  height: 55px;
+}
+.switchnotification{
+	display:inline-block;
+}
+.subline{
+	color:gainsboro;
+	font-size:12px;
+	margin:0;
+	padding:0;
+	line-height:1;
+}
+.more-menu{
+	width:35px;
+	height:35px;
+	font-size:17px;
+	margin-top:9px;
+}
+.delivery-method, .schedule {
+	line-height:1;
+	margin:0;
+}
+.notification-buttons {
+
+}
+.notification-title {
+	margin-bottom:0;
+	line-height:1;
+}
+.switch-orange label input[type=checkbox]:checked+.lever {
+	background-color: #ffd180 !important;
+}
+.switch-orange label input[type=checkbox]:checked+.lever:after {
+	background-color: #ffab40 !important;
+}
+.inline-field {
+	display:inline-block;
+}
+#condition {
+	width:auto;
+}
+.inline-field > div.select-wrapper {
+	display:inline-block;
+}
+#eqparam {
+	width:auto;
+}
+.sched {
+	margin-top: 10px;
+
+}
+nav i.inline-icons {
+	height:auto;
+}
+li.settings-entry{
+  border-bottom:1px solid #8a8a8a;
+  height: 75px;
+  line-height: 75px;
+  width: 100%;
+}
+li.settings-entry > a > i.material-icons {
+  line-height: 75px !important;
+}
+li.settings-entry:last-child {
+  border:0;
+}
+div.modal-fullscreen {
+  display:none;
+  position:fixed;
+  width:100%;
+  height: 100%;
+  margin:0;
+  padding:0;
+  left:0;
+  bottom:0;
+  z-index:999;
+  background-color: white;
+  overflow-y:scroll;
+}
+div.modal-fullscreen > div.fullscreen-toolbar {
+  position: fixed;
+  height: 56px;
+  width: 100%;
+  margin:0;
+  padding-left: 16px;
+  padding-right: 16px;
+  z-index: 1;
+}
+div.modal-fullscreen > div.fullscreen-toolbar > a {
+  line-height: 56px;
+  text-transform: uppercase;
+
+}
+div.modal-fullscreen > div.fullscreen-toolbar > a > i {
+  font-size: 24px;
+  line-height: 56px;
+}
+div.modal-fullscreen > div.fullscreen-toolbar > h4.fullscreen-modal-header {
+  line-height: 56px;
+  margin:0;
+  margin-left: 36px;
+  width:auto;
+  display:inline-block;
+}
+div.modal-fullscreen > div.fullscreen-toolbar > a.fullscreen-modal-close {
+  height: 56px;
+  width: 56px;
+}
+div.modal-fullscreen > div.fullscreen-modal-content {
+  margin-top: 60px !important;
+  position:relative;
+}
+.avatar-pic {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  display:inline-block;
+  margin-top: 20px;
+  z-index:0;
+}
+.avatar-pic > label > img {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+}
+.avatar-pic > input {
+  display:none;
+}
+.profile-name {
+  float: right;
+  word-wrap: break-word;
+  margin-top: 10px;
+  font-size: 24px;
+  font-weight: bold;
+}
