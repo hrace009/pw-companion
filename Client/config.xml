@@ -1,6 +1,6 @@
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.smichrissoft.watcher" version="0.0.1">
-  <name>Dream Dashboard</name>
-  <description>Dream Dashboard Dev.</description>
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.gtwenty.pwcompanion" version="0.0.1">
+  <name>PW Companion</name>
+  <description>Perfect world companion mobile app.</description>
   <author href="http://gtwenty.com" email="realgt20@gmail.com">Twen Shin</author>
   <content src="index.html"/>
   <preference name="DisallowOverscroll" value="true"/>

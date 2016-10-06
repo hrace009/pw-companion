@@ -36,18 +36,13 @@
 #sidenav-profile {
     height: 165px;
 }
-#sidenav-avatar {
-	margin-top:10px;
-	width: 80px;
-	height: 80px;
-}
-.sidenav-username {
+.sidenav-nickname {
 	font-size:16px;
 	line-height: 1.5;
 	margin: 0;
 	padding: 0;
 }
-.sidenav-position {
+.sidenav-login {
 	font-size:12px;
 	color:#999999;
 	line-height:1;
